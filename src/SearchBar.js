@@ -2,6 +2,30 @@ import React, { useState } from "react";
 
 const SearchBar = () => {
   const [search, updateSearch] = useState("");
+  const [submitted, updateSubmit] = useState("false");
+
+  const searchForRecipes = (event) => {
+    event.preventDefault();
+
+    fetch(
+      "https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes",
+      {
+        method: "GET",
+        headers: {
+          "x-rapidapi-key":
+            "HwpyZ2T4YPmshAWuYY6kK9VBbjA5p1I1ETtjsnjKbUzNbr9tsh",
+          "x-rapidapi-host": "tasty.p.rapidapi.com",
+        },
+      }
+    )
+      .then((response) => {
+        console.log(response);
+        updateSubmit(true);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  };
 
   return (
     <div id="search-bar-container">
@@ -15,7 +39,9 @@ const SearchBar = () => {
           onChange={(e) => updateSearch(e.target.value)}
           placeholder="Enter food I'm craving here"
         ></input>
-        <button id="search-bar-submit">Yum</button>
+        <button id="search-bar-submit" onClick={searchForRecipes}>
+          Yum
+        </button>
       </h3>
     </div>
   );
