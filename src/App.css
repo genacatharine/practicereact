@@ -32,6 +32,10 @@
   width: 165px;
   text-align: center;
 }
+#search-bar-input {
+  margin: 10px;
+  text-align: center;
+}
 
 @keyframes App-logo-spin {
   from {

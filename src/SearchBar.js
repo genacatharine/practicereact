@@ -15,7 +15,7 @@ const SearchBar = () => {
           onChange={(e) => updateSearch(e.target.value)}
           placeholder="Enter food I'm craving here"
         ></input>
-        <button>Yum</button>
+        <button id="search-bar-submit">Yum</button>
       </h3>
     </div>
   );
