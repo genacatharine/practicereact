@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const SearchBar = () => {
   const [search, updateSearch] = useState("");
-  const [submitted, updateSubmit] = useState("false");
+  const [updateSubmit] = useState("false");
 
   const searchForRecipes = (event) => {
     event.preventDefault();

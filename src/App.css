@@ -40,6 +40,7 @@
   color: pink;
 }
 #intro {
+  font-family: monaco;
   width: 50%;
 }
 @keyframes App-logo-spin {
