@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const SearchBar = () => {
   const [search, updateSearch] = useState("");
-  const [updateSubmit] = useState("false");
+  const [submitted, updateSubmit] = useState("false");
 
   const searchForRecipes = (event) => {
     event.preventDefault();
@@ -20,7 +20,8 @@ const SearchBar = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        updateSearch(data.results[1].thumbnail_url);
+        console.log(data.results[1]);
         updateSubmit(true);
       })
       .catch((err) => {
@@ -44,6 +45,7 @@ const SearchBar = () => {
           Yum
         </button>
       </h3>
+      <img id="img" src={search} alt="recipe" />
     </div>
   );
 };
