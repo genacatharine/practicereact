@@ -17,12 +17,15 @@ function App() {
               books
             </a>{" "}
             from R.L. Stine back in the day where you would choose your own
-            adventure? Well this isn't that but it's similar. So close your
-            eyes, and focus on your tongue, now focus on your taste buds. Now
-            imagine a meal so delicious, so titillating, so scrumptious that you
-            can't stop indulging in it. What is that country's origin? Click on
-            the country below to start your journey to find a new recipe to
-            embark on. Bon Appetit!
+            adventure? Well this isn't that but it's similar. <br></br>
+            <br></br>So close your eyes, and focus on your tongue, now focus on
+            your taste buds. Now imagine a meal so delicious, so titillating, so
+            scrumptious that you can't stop indulging in it.
+            <br></br>
+            <br></br>
+            Where is that food's country of origin? Click on the country below
+            to start your journey to find a new recipe to embark on. Bon
+            Appetit!
           </h6>
         </div>
 
