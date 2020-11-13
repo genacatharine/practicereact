@@ -19,11 +19,13 @@ const SearchBar = () => {
       }
     )
       .then((response) => response.json())
-      .then((data) => {
-        updateSearch(data.results[1].thumbnail_url);
-        console.log(data.results[1]);
-        updateSubmit(true);
-      })
+      .then((data) =>
+        data.results.map((result) => {
+          updateSearch(result.thumbnail_url);
+          updateSubmit(true);
+          console.log(result);
+        })
+      )
       .catch((err) => {
         console.error(err);
       });
@@ -45,7 +47,9 @@ const SearchBar = () => {
           Yum
         </button>
       </h3>
-      <img id="img" src={search} alt="recipe" />
+      {submitted === "false" ? null : (
+        <img id="img" src={search} alt="recipe" />
+      )}
     </div>
   );
 };
