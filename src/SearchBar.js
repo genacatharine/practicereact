@@ -20,7 +20,7 @@ const SearchBar = () => {
     )
       .then((response) => response.json())
       .then((data) =>
-        data.results.map((result) => {
+        data.results.forEach((result) => {
           updateSearch(result.thumbnail_url);
           updateSubmit(true);
           console.log(result);
