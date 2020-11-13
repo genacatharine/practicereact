@@ -5,6 +5,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <h1>Me, a chef 👩‍🍳</h1>
         <div id="intro">
           <h6>
             Hello there. I'm here to give you a dose of nostalgia. For all my
@@ -24,7 +25,7 @@ function App() {
             embark on. Bon Appetit!
           </h6>
         </div>
-        <h1>Me, a chef 👩‍🍳</h1>
+
         <SearchBar />
       </header>
     </div>
