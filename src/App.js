@@ -11,7 +11,6 @@ function App() {
             80s babies in the room, remember those{" "}
             <a
               id="books-link"
-              target="_blank"
               href="https://www.thriftbooks.com/series/give-yourself-goosebumps/41417/"
             >
               books
