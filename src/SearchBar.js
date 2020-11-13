@@ -34,17 +34,23 @@ const SearchBar = () => {
   return (
     <div id="search-bar-container">
       <h3>
-        <label>What new recipe shall I make today?</label>
+        <label>Choose A Country</label>
         <br></br>
-        <input
+        {/* <input
           id="search-bar-input"
           type="text"
           value={search}
           onChange={(e) => updateSearch(e.target.value)}
           placeholder="Enter food I'm craving here"
-        ></input>
+        ></input> */}
         <button id="search-bar-submit" onClick={searchForRecipes}>
-          Yum
+          Mexico 🇲🇽
+        </button>
+        <button id="search-bar-submit" onClick={searchForRecipes}>
+          Thailand 🇹🇭
+        </button>
+        <button id="search-bar-submit" onClick={searchForRecipes}>
+          France 🇫🇷
         </button>
       </h3>
       {submitted === "false" ? null : (
