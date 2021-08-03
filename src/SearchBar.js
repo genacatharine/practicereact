@@ -4,7 +4,59 @@ const SearchBar = () => {
   const [search, updateSearch] = useState("");
   const [submitted, updateSubmit] = useState("false");
 
-  const searchForRecipes = (event) => {
+  const searchForCoffee = (event) => {
+    event.preventDefault();
+
+    fetch(
+      "https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes",
+      {
+        method: "GET",
+        headers: {
+          "x-rapidapi-key":
+            "HwpyZ2T4YPmshAWuYY6kK9VBbjA5p1I1ETtjsnjKbUzNbr9tsh",
+          "x-rapidapi-host": "tasty.p.rapidapi.com",
+        },
+      }
+    )
+      .then((response) => response.json())
+      .then((data) =>
+        data.results.forEach((result) => {
+          updateSearch(result.thumbnail_url);
+          updateSubmit(true);
+          console.log(result);
+        })
+      )
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+  const searchForHikes = (event) => {
+    event.preventDefault();
+
+    fetch(
+      "https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes",
+      {
+        method: "GET",
+        headers: {
+          "x-rapidapi-key":
+            "HwpyZ2T4YPmshAWuYY6kK9VBbjA5p1I1ETtjsnjKbUzNbr9tsh",
+          "x-rapidapi-host": "tasty.p.rapidapi.com",
+        },
+      }
+    )
+      .then((response) => response.json())
+      .then((data) =>
+        data.results.forEach((result) => {
+          updateSearch(result.thumbnail_url);
+          updateSubmit(true);
+          console.log(result);
+        })
+      )
+      .catch((err) => {
+        console.error(err);
+      });
+  };
+  const searchForRestaurants = (event) => {
     event.preventDefault();
 
     fetch(
@@ -34,23 +86,16 @@ const SearchBar = () => {
   return (
     <div id="search-bar-container">
       <h3>
-        <label>Choose A Country</label>
+        <label>Choose An Indulgence</label>
         <br></br>
-        {/* <input
-          id="search-bar-input"
-          type="text"
-          value={search}
-          onChange={(e) => updateSearch(e.target.value)}
-          placeholder="Enter food I'm craving here"
-        ></input> */}
-        <button id="search-bar-submit" onClick={searchForRecipes}>
-          Mexico 🇲🇽
+        <button id="search-bar-submit" onClick={searchForCoffee}>
+          Coffee
         </button>
-        <button id="search-bar-submit" onClick={searchForRecipes}>
-          Thailand 🇹🇭
+        <button id="search-bar-submit" onClick={searchForHikes}>
+          Hikes
         </button>
-        <button id="search-bar-submit" onClick={searchForRecipes}>
-          France 🇫🇷
+        <button id="search-bar-submit" onClick={searchForRestaurants}>
+          Restaurants
         </button>
       </h3>
       {submitted === "false" ? null : (
