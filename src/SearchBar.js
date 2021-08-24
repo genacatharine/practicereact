@@ -1,87 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
 const SearchBar = () => {
-  const [search, updateSearch] = useState("");
-  const [submitted, updateSubmit] = useState("false");
 
-  const searchForCoffee = (event) => {
-    event.preventDefault();
 
-    fetch(
-      "https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes",
-      {
-        method: "GET",
-        headers: {
-          "x-rapidapi-key":
-            "HwpyZ2T4YPmshAWuYY6kK9VBbjA5p1I1ETtjsnjKbUzNbr9tsh",
-          "x-rapidapi-host": "tasty.p.rapidapi.com",
-        },
-      }
-    )
-      .then((response) => response.json())
-      .then((data) =>
-        data.results.forEach((result) => {
-          updateSearch(result.thumbnail_url);
-          updateSubmit(true);
-          console.log(result);
-        })
-      )
-      .catch((err) => {
-        console.error(err);
-      });
-  };
-  const searchForHikes = (event) => {
-    event.preventDefault();
-
-    fetch(
-      "https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes",
-      {
-        method: "GET",
-        headers: {
-          "x-rapidapi-key":
-            "HwpyZ2T4YPmshAWuYY6kK9VBbjA5p1I1ETtjsnjKbUzNbr9tsh",
-          "x-rapidapi-host": "tasty.p.rapidapi.com",
-        },
-      }
-    )
-      .then((response) => response.json())
-      .then((data) =>
-        data.results.forEach((result) => {
-          updateSearch(result.thumbnail_url);
-          updateSubmit(true);
-          console.log(result);
-        })
-      )
-      .catch((err) => {
-        console.error(err);
-      });
-  };
-  const searchForRestaurants = (event) => {
-    event.preventDefault();
-
-    fetch(
-      "https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes",
-      {
-        method: "GET",
-        headers: {
-          "x-rapidapi-key":
-            "HwpyZ2T4YPmshAWuYY6kK9VBbjA5p1I1ETtjsnjKbUzNbr9tsh",
-          "x-rapidapi-host": "tasty.p.rapidapi.com",
-        },
-      }
-    )
-      .then((response) => response.json())
-      .then((data) =>
-        data.results.forEach((result) => {
-          updateSearch(result.thumbnail_url);
-          updateSubmit(true);
-          console.log(result);
-        })
-      )
-      .catch((err) => {
-        console.error(err);
-      });
-  };
+  const searchForCoffee = (event) => { };
+  const searchForHikes = (event) => { };
+  const searchForRestaurants = (event) => { };
 
   return (
     <div id="search-bar-container">
@@ -98,9 +22,6 @@ const SearchBar = () => {
           Restaurants
         </button>
       </h3>
-      {submitted === "false" ? null : (
-        <img id="img" src={search} alt="recipe" />
-      )}
     </div>
   );
 };

@@ -6,28 +6,25 @@ import reportWebVitals from "./reportWebVitals";
 import {
   ApolloProvider,
   ApolloClient,
-  createHttpLink,
   InMemoryCache,
   gql,
 } from "@apollo/client";
 
-const httpLink = createHttpLink({
-  uri: "https://48p1r2roz4.sse.codesandbox.io",
-});
 
 const client = new ApolloClient({
-  link: httpLink,
+  uri: "http://localhost:4000",
   cache: new InMemoryCache(),
 });
 
-// const client = ...
 
 client
   .query({
     query: gql`
-      query GetRates {
-        rates(currency: "USD") {
-          currency
+      query CoffeeShopList {
+        coffeeShopList {
+          title
+          address
+          rating
         }
       }
     `,
